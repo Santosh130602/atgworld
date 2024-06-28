@@ -60,7 +60,7 @@ const SignUp = () => {
                     "Content-type": "application/json",
                 },
             };
-                const { data } = await axios.post('https://atgworld-3i5n.onrender.com/api/user/register', {
+                const { data } = await axios.post('https://atgworld-2.onrender.com/api/user/register', {
                 username,
                 email,
                 password
