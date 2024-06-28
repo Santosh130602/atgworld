@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json()); // to accept json data
 
 app.use(cors({
-    origin: ["http://localhost:3000", "https://atgworld-3i5n.onrender.com"]
+    origin: ["https://atgworld-chi.vercel.app/#/login", "https://atgworld-3i5n.onrender.com"]
 }));
 
 
