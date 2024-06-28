@@ -31,7 +31,7 @@ const AllPosts = () => {
     const getAllPosts = async () => {
         setLoadingPost(true);
         try {
-            const response = await axios.get('https://atgworld-3i5n.onrender.com/api/posts/posts', config);
+            const response = await axios.get('https://atgworld-2.onrender.com/api/posts/posts', config);
             const { userId, posts } = response.data;
             setUserId(userId);
             setPosts(posts);
@@ -54,7 +54,7 @@ const AllPosts = () => {
 
     const handleLikePost = async (id) => {
         try {
-            await axios.put(`https://atgworld-3i5n.onrender.com/api/posts/addlike/${id}`, {}, config);
+            await axios.put(`https://atgworld-2.onrender.com/api/posts/addlike/${id}`, {}, config);
             getAllPosts();
         } catch (error) {
             toast({
@@ -70,7 +70,7 @@ const AllPosts = () => {
     const handleComment = async (id) => {
         setCurrentPostId(id);
         try {
-            const response = await axios.get(`https://atgworld-3i5n.onrender.com/api/comments/${id}/getallcomments`, config);
+            const response = await axios.get(`https://atgworld-2.onrender.com/api/comments/${id}/getallcomments`, config);
             const allComments = response.data;
             setComments(prevComments => ({
                 ...prevComments,
@@ -102,7 +102,7 @@ const AllPosts = () => {
         }
 
         try {
-            await axios.post('https://atgworld-3i5n.onrender.com/api/comments/addcomment', { postId: currentPostId, text: newComment }, config);
+            await axios.post('https://atgworld-2.onrender.com/api/comments/addcomment', { postId: currentPostId, text: newComment }, config);
             toast({
                 title: "Comment added Successfully",
                 status: 'success',
