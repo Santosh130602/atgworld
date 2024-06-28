@@ -53,7 +53,7 @@ const Login = () => {
             };
 
             
-                const { data } = await axios.post('http://localhost:4000/api/user/login', {
+                const { data } = await axios.post('https://atgworld-3i5n.onrender.com/api/user/login', {
                 username,
                 password
             }, config);
@@ -112,7 +112,7 @@ const Login = () => {
                 },
             };
 
-            const { data } = await axios.put('http://localhost:4000/api/user/forgotpassword', {
+            const { data } = await axios.put('https://atgworld-3i5n.onrender.com/api/user/forgotpassword', {
                 email,
                 updatedpassword
             }, config);

@@ -106,7 +106,7 @@ const Posts = () => {
                 },
             };
 
-            const { data } = await axios.post(`http://localhost:4000/api/posts/addPost`, { post: pic }, config);
+            const { data } = await axios.post(`https://atgworld-3i5n.onrender.com/api/posts/addPost`, { post: pic }, config);
             toast({
                 title: "Post added Successfully",
                 status: 'success',

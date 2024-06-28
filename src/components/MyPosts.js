@@ -43,7 +43,7 @@ const MyPosts = () => {
 
     const getAllPosts = async () => {
         try {
-            const response = await axios.get('http://localhost:4000/api/posts/myposts', config);
+            const response = await axios.get('https://atgworld-3i5n.onrender.com/api/posts/myposts', config);
             const { userId, posts } = response.data;
             if (posts.length === 0) {
                 setLoadingMyPost(true);
@@ -83,7 +83,7 @@ const MyPosts = () => {
     const deletePost = async () => {
         setLoading(true);
         try {
-            await axios.delete(`http://localhost:4000/api/posts/deletepost/${postToDelete}`, config);
+            await axios.delete(`https://atgworld-3i5n.onrender.com/api/posts/deletepost/${postToDelete}`, config);
             toast({
                 title: 'Post Deleted Successfully',
                 status: 'success',
@@ -108,7 +108,7 @@ const MyPosts = () => {
 
     const handleLikePost = async (id) => {
         try {
-            await axios.put(`http://localhost:4000/api/posts/addlike/${id}`, {}, config);
+            await axios.put(`https://atgworld-3i5n.onrender.com/api/posts/addlike/${id}`, {}, config);
             getAllPosts();
         } catch (error) {
             toast({
@@ -124,7 +124,7 @@ const MyPosts = () => {
     const handleComment = async (id) => {
         setCurrentPostId(id);
         try {
-            const response = await axios.get(`http://localhost:4000/api/comments/${id}/getallcomments`, config);
+            const response = await axios.get(`https://atgworld-3i5n.onrender.com/api/comments/${id}/getallcomments`, config);
             const allComments = response.data;
             if (allComments.length === 0) {
                 toast({
@@ -166,7 +166,7 @@ const MyPosts = () => {
         }
 
         try {
-            await axios.post(`http://localhost:4000/api/comments/addcomment`, { postId: currentPostId, text: newComment }, config);
+            await axios.post(`https://atgworld-3i5n.onrender.com/api/comments/addcomment`, { postId: currentPostId, text: newComment }, config);
             toast({
                 title: "Comment added Successfully",
                 status: 'success',
@@ -243,7 +243,7 @@ const MyPosts = () => {
     const submitHandlerEdit = async () => {
         setLoadingEdit(true);
         try {
-            await axios.put(`http://localhost:4000/api/posts/updatepost/${postToEdit}`, { post: picEdit }, config);
+            await axios.put(`https://atgworld-3i5n.onrender.com/api/posts/updatepost/${postToEdit}`, { post: picEdit }, config);
             toast({
                 title: "Post updated Successfully",
                 status: 'success',
