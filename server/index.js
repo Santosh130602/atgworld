@@ -9,14 +9,24 @@ const { errorHandler } = require('./middleware/errorMiddleware');
 const colors = require("colors");
 const database = require('./config/db');
 
-
-
-
 dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+
+
+const corsOptions = {
+    origin: ['https://atgworld-chi.vercel.app/#/', 'http://localhost:3000'],
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
+
+
+
+
 
 
 
