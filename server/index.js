@@ -14,7 +14,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin:"https://atgworld-chi.vercel.app",
+    origin:"https://atgworld-chi.vercel.app/#",
 }));
 
 
