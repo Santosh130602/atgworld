@@ -50,7 +50,7 @@ const Posts = () => {
                 status: 'warning',
                 duration: 5000,
                 isClosable: true,
-                position: 'bottom',
+                position: 'top',
             });
             setLoading(false);
             return;
@@ -106,7 +106,7 @@ const Posts = () => {
                 },
             };
 
-            const { data } = await axios.post(`https://atgworld-3i5n.onrender.com/api/posts/addPost`, { post: pic }, config);
+            const { data } = await axios.post(`https://atgworld-2.onrender.com/api/posts/addPost`, { post: pic }, config);
             toast({
                 title: "Post added Successfully",
                 status: 'success',
