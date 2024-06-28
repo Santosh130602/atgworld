@@ -53,7 +53,7 @@ const Login = () => {
             };
 
             
-                const { data } = await axios.post('https://atgworld-2.onrender.com//api/user/login', {
+                const { data } = await axios.post('https://atgworld-2.onrender.com/api/user/login', {
                 username,
                 password
             }, config);
