@@ -13,15 +13,17 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-// app.use(cors());
+app.use(cors({
+    origin:"https://atgworld-chi.vercel.app",
+}));
 
 
-const corsOptions = {
-    origin: ['https://atgworld-chi.vercel.app/#/', 'http://localhost:3000'],
-    optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//     origin: ['https://atgworld-chi.vercel.app/#/', 'http://localhost:3000'],
+//     optionsSuccessStatus: 200,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 
 
