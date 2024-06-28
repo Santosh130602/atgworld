@@ -43,7 +43,7 @@ const MyPosts = () => {
 
     const getAllPosts = async () => {
         try {
-            const response = await axios.get('https://atgworld-3i5n.onrender.com/api/posts/myposts', config);
+            const response = await axios.get('https://atgworld-2.onrender.com/api/posts/myposts', config);
             const { userId, posts } = response.data;
             if (posts.length === 0) {
                 setLoadingMyPost(true);
@@ -52,7 +52,7 @@ const MyPosts = () => {
                     status: 'success',
                     duration: 5000,
                     isClosable: true,
-                    position: 'bottom',
+                    position: 'top',
                 });
             } else {
                 setLoadingMyPost(false);
@@ -65,7 +65,7 @@ const MyPosts = () => {
                 status: 'error',
                 duration: 5000,
                 isClosable: true,
-                position: 'bottom',
+                position: 'top',
             });
             setLoadingMyPost(false);
         }
@@ -83,11 +83,11 @@ const MyPosts = () => {
     const deletePost = async () => {
         setLoading(true);
         try {
-            await axios.delete(`https://atgworld-3i5n.onrender.com/api/posts/deletepost/${postToDelete}`, config);
+            await axios.delete(`https://atgworld-2.onrender.com/api/posts/deletepost/${postToDelete}`, config);
             toast({
                 title: 'Post Deleted Successfully',
                 status: 'success',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -97,7 +97,7 @@ const MyPosts = () => {
             toast({
                 title: error.response.data.message || "Error Occurred!",
                 status: 'error',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -108,13 +108,13 @@ const MyPosts = () => {
 
     const handleLikePost = async (id) => {
         try {
-            await axios.put(`https://atgworld-3i5n.onrender.com/api/posts/addlike/${id}`, {}, config);
+            await axios.put(`https://atgworld-2.onrender.com/api/posts/addlike/${id}`, {}, config);
             getAllPosts();
         } catch (error) {
             toast({
                 title: error.response.data.message || "Error Occurred!",
                 status: 'error',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -124,7 +124,7 @@ const MyPosts = () => {
     const handleComment = async (id) => {
         setCurrentPostId(id);
         try {
-            const response = await axios.get(`https://atgworld-3i5n.onrender.com/api/comments/${id}/getallcomments`, config);
+            const response = await axios.get(`https://atgworld-2.onrender.com/api/comments/${id}/getallcomments`, config);
             const allComments = response.data;
             if (allComments.length === 0) {
                 toast({
@@ -144,7 +144,7 @@ const MyPosts = () => {
             toast({
                 title: error.response.data.message || "Error Occurred!",
                 status: 'error',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -157,7 +157,7 @@ const MyPosts = () => {
             toast({
                 title: "Add some comment text first",
                 status: 'warning',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -166,7 +166,7 @@ const MyPosts = () => {
         }
 
         try {
-            await axios.post(`https://atgworld-3i5n.onrender.com/api/comments/addcomment`, { postId: currentPostId, text: newComment }, config);
+            await axios.post(`https://atgworld-2.onrender.com/api/comments/addcomment`, { postId: currentPostId, text: newComment }, config);
             toast({
                 title: "Comment added Successfully",
                 status: 'success',
@@ -181,7 +181,7 @@ const MyPosts = () => {
             toast({
                 title: error.response?.data?.message || "Error Occurred!",
                 status: 'error',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -195,7 +195,7 @@ const MyPosts = () => {
             toast({
                 title: "Please select an Image!",
                 status: 'warning',
-                duration: 500,
+                duration: 5000,
                 isClosable: true,
                 position: 'top',
             });
@@ -243,7 +243,7 @@ const MyPosts = () => {
     const submitHandlerEdit = async () => {
         setLoadingEdit(true);
         try {
-            await axios.put(`https://atgworld-3i5n.onrender.com/api/posts/updatepost/${postToEdit}`, { post: picEdit }, config);
+            await axios.put(`https://atgworld-2.onrender.com/api/posts/updatepost/${postToEdit}`, { post: picEdit }, config);
             toast({
                 title: "Post updated Successfully",
                 status: 'success',
