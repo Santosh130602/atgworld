@@ -59,7 +59,7 @@ dotenv.config();
 const app = express();
 
 const corsOptions = {
-    origin: 'https://atgworld-chi.vercel.app',
+    origin: ['https://atgworld-chi.vercel.app','https://atgworld-ajfirgz0n-santosh-s-projects-b83e3098.vercel.app/'],
     optionsSuccessStatus: 200,
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
