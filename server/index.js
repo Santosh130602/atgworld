@@ -14,16 +14,8 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin:"https://atgworld-chi.vercel.app/#",
+    origin: '*',
 }));
-
-
-// const corsOptions = {
-//     origin: ['https://atgworld-chi.vercel.app/#/', 'http://localhost:3000'],
-//     optionsSuccessStatus: 200,
-// };
-
-// app.use(cors(corsOptions));
 
 
 
