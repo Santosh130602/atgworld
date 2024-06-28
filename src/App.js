@@ -5,7 +5,6 @@ import Signup from './components/SignUp'
 import Posts from './components/Posts';
 import Navbar from './components/Navbar';
 
-export const URL = process.env.REACT_APP_SERVER_URL;
 
 function App() {
   return (
