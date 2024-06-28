@@ -62,7 +62,7 @@ dotenv.config();
 const app = express();
  
 app.use(cors({
-    origin: 'https://atgworld-16rnyxr8d-santosh-s-projects-b83e3098.vercel.app'
+    origin: 'https://atgworld-chi.vercel.app',
 }));
 
 
