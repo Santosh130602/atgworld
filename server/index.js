@@ -9,13 +9,16 @@ const { errorHandler } = require('./middleware/errorMiddleware');
 const colors = require("colors");
 const database = require('./config/db');
 
+
+app.use(express.static('public'));
+
 dotenv.config();
 const app = express();
 
-app.use(express.json()); // to accept json data
+// app.use(express.json()); 
 
 app.use(cors({
-    origin: ["https://atgworld-chi.vercel.app/#/login", "https://atgworld-3i5n.onrender.com"]
+    origin: 'https://atgworld-16rnyxr8d-santosh-s-projects-b83e3098.vercel.app'
 }));
 
 
