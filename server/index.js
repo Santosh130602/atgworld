@@ -64,7 +64,7 @@ dotenv.config();
 const app = express();
  
 app.use(cors({
-    origin: ['https://atgworld-chi.vercel.app/','http://localhost:3000/','https://atgworld-3i5n.onrender.com']
+    origin: ['https://atgworld-chi.vercel.app'],
 }));
 app.use(express.json());
 
